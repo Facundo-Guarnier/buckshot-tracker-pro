@@ -1,0 +1,5 @@
+{
+  "name": "Buckshot Tracker Pro",
+  "description": "An unofficial utility tool for the video game Buckshot Roulette. Track live and blank rounds, visualize probabilities, and manage game state with an immersive industrial interface.",
+  "requestFramePermissions": []
+}
