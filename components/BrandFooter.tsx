@@ -11,7 +11,6 @@
  * - VITE_APP_VERSION: Application version
  * - VITE_BRAND_NAME: Brand name (Guarnold)
  * - VITE_BRAND_URL: Brand website URL
- * - VITE_BRAND_SIGNATURE: Brand signature image URL
  * - VITE_REPO_URL: Repository URL
  * 
  * Usage:
@@ -22,9 +21,6 @@
 
 import React from 'react';
 import { Github, Globe } from 'lucide-react';
-
-// Importar la imagen directamente - Vite procesa esto automáticamente
-import signatureImageSrc from '../assets/guarnold_firma.png';
 
 interface BrandFooterProps {
   /** Additional CSS classes */
@@ -49,20 +45,21 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
   const appVersion = import.meta.env.VITE_APP_VERSION || '4.3.0';
   const brandName = import.meta.env.VITE_BRAND_NAME || 'Guarnold';
   const brandUrl = import.meta.env.VITE_BRAND_URL || 'https://guarnold.com.ar';
+  const brandSignature = import.meta.env.VITE_BRAND_SIGNATURE || '';
   const repoUrl = import.meta.env.VITE_REPO_URL || 'https://github.com/Facundo-Guarnier/buckshot-tracker-pro';
 
   // Base wrapper for forced dark mode
   const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => 
     forceDark ? <div className="dark">{children}</div> : <>{children}</>;
 
-  // Signature component - usando la imagen importada directamente
-  const Signature = () => (
+  // Signature component - subtle and elegant
+  const Signature = () => brandSignature ? (
     <img 
-      src={signatureImageSrc} 
+      src={brandSignature} 
       alt={brandName}
       className="h-10 sm:h-12 w-auto -my-2 opacity-40 hover:opacity-70 transition-opacity dark:invert dark:opacity-30 dark:hover:opacity-60"
     />
-  );
+  ) : null;
 
   if (compact) {
     return (

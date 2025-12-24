@@ -5,7 +5,6 @@ import SlotCard from './components/SlotCard';
 import StatusBoard from './components/StatusBoard';
 import SetupForm from './components/SetupForm';
 import HistoryLog from './components/HistoryLog';
-import BrandFooter from './components/BrandFooter';
 
 const App: React.FC = () => {
   const [state, setState] = useState<GameState>({
@@ -247,14 +246,6 @@ const App: React.FC = () => {
             </div>
           </div>
         )}
-      </div>
-      
-      {/* BRAND FOOTER INTEGRATION */}
-      <div className="w-full z-20">
-        <BrandFooter 
-          compact 
-          forceDark 
-        />
       </div>
     </div>
   );
