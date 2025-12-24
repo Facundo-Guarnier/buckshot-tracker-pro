@@ -5,6 +5,7 @@ import SlotCard from './components/SlotCard';
 import StatusBoard from './components/StatusBoard';
 import SetupForm from './components/SetupForm';
 import HistoryLog from './components/HistoryLog';
+import BrandFooter from './components/BrandFooter';
 
 const App: React.FC = () => {
   const [state, setState] = useState<GameState>({
@@ -246,10 +247,14 @@ const App: React.FC = () => {
             </div>
           </div>
         )}
-
-        <footer className="mt-auto pt-4 md:pt-12 text-center text-[9px] md:text-[10px] mono uppercase text-zinc-700 tracking-[0.2em]">
-          SYSTEM v4.3.4 // LOGIC KERNEL ONLINE
-        </footer>
+      </div>
+      
+      {/* BRAND FOOTER INTEGRATION */}
+      <div className="w-full z-20">
+        <BrandFooter 
+          compact 
+          forceDark 
+        />
       </div>
     </div>
   );
