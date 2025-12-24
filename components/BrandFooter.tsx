@@ -57,7 +57,7 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
     <img 
       src={brandSignature} 
       alt={brandName}
-      className="h-10 sm:h-12 w-auto -my-2 opacity-40 hover:opacity-70 transition-opacity dark:invert dark:opacity-30 dark:hover:opacity-60"
+      className="h-8 sm:h-10 md:h-12 w-auto -my-1 sm:-my-2 opacity-40 hover:opacity-70 transition-opacity dark:invert dark:opacity-30 dark:hover:opacity-60"
     />
   ) : null;
 
@@ -72,7 +72,7 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm">
             {/* App Name with Badge */}
             <div className="flex items-center gap-1.5 md:gap-2">
-              <span className="font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-tight text-[10px] md:text-sm">
+              <span className="font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-tight text-[10px] md:text-sm hidden sm:inline">
                 {appName}
               </span>
               <span className="px-1.5 md:px-2 py-0.5 rounded-full text-[8px] md:text-[10px] font-mono font-bold bg-white text-zinc-500 border border-zinc-300 dark:bg-zinc-900 dark:text-red-500 dark:border-red-900/30">
@@ -110,13 +110,13 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="
-                    flex items-center gap-1.5 transition-colors p-1.5 md:p-0
+                    flex items-center gap-1.5 transition-colors p-1 sm:p-1.5 md:p-0
                     text-zinc-600 hover:text-zinc-900
                     dark:text-zinc-500 dark:hover:text-red-400
                   "
                   title="Ver código fuente en GitHub"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
                   <span className="hidden md:inline">Código</span>
                 </a>
               </>
