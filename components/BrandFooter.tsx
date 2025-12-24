@@ -69,18 +69,18 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
           bg-neutral-950/80 border-zinc-800/50
           ${className}
         `}>
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm">
+          <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 text-xs md:text-sm">
             {/* App Name with Badge */}
-            <div className="flex items-center gap-2">
-              <span className="font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-tight">
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <span className="font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-tight text-[10px] md:text-sm">
                 {appName}
               </span>
-              <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-white text-zinc-500 border border-zinc-300 dark:bg-zinc-900 dark:text-red-500 dark:border-red-900/30">
+              <span className="px-1.5 md:px-2 py-0.5 rounded-full text-[8px] md:text-[10px] font-mono font-bold bg-white text-zinc-500 border border-zinc-300 dark:bg-zinc-900 dark:text-red-500 dark:border-red-900/30">
                 v{appVersion}
               </span>
             </div>
             
-            <span className="text-zinc-300 dark:text-zinc-700 hidden sm:inline">|</span>
+            <span className="text-zinc-300 dark:text-zinc-700 hidden md:inline">|</span>
             
             {/* Brand Link - Main Hub */}
             <a 
@@ -88,35 +88,36 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
               target="_blank" 
               rel="noopener noreferrer"
               className="
-                flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all font-medium
+                flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1 md:py-1.5 rounded-lg transition-all font-medium text-xs md:text-sm
                 bg-white text-zinc-700 border border-zinc-200 
                 hover:bg-zinc-200 hover:text-zinc-900
                 dark:bg-zinc-900/50 dark:text-zinc-400 dark:border-zinc-800
                 dark:hover:bg-red-950/30 dark:hover:text-red-400 dark:hover:border-red-900/40
               "
             >
-              <Globe className="w-4 h-4" />
-              <span className="hidden sm:inline">Más proyectos en</span>
+              <Globe className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <span className="hidden lg:inline">Más proyectos en</span>
+              <span className="lg:hidden">By</span>
               <strong className="tracking-wide">{brandName}</strong>
             </a>
             
             {/* Repo Link */}
             {repoUrl && (
               <>
-                <span className="text-zinc-300 dark:text-zinc-700 hidden sm:inline">|</span>
+                <span className="text-zinc-300 dark:text-zinc-700 hidden md:inline">|</span>
                 <a 
                   href={repoUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="
-                    flex items-center gap-2 transition-colors
+                    flex items-center gap-1.5 transition-colors p-1.5 md:p-0
                     text-zinc-600 hover:text-zinc-900
                     dark:text-zinc-500 dark:hover:text-red-400
                   "
                   title="Ver código fuente en GitHub"
                 >
                   <Github className="w-4 h-4" />
-                  <span>Código</span>
+                  <span className="hidden md:inline">Código</span>
                 </a>
               </>
             )}
