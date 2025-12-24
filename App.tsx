@@ -147,9 +147,26 @@ const App: React.FC = () => {
   }, [state.slots, state.initialLive, state.initialBlank]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center">
+    <div className="min-h-screen flex flex-col items-center relative overflow-hidden bg-neutral-950">
+      
+      {/* BACKGROUND ATMOSPHERE */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+        {/* Rejilla Móvil Tecnológica */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-10 animate-grid-pan"></div>
+        
+        {/* Barrido de Escaneo CRT */}
+        <div className="scanline-bar"></div>
+
+        {/* Blob Rojo Oscuro (Danger) */}
+        <div className="absolute top-[-10%] left-[-10%] w-[50vh] h-[50vh] bg-red-900 rounded-full mix-blend-screen filter blur-[100px] opacity-[0.08] animate-blob"></div>
+        {/* Blob Gris/Azulado (Industrial) */}
+        <div className="absolute top-[20%] right-[-10%] w-[40vh] h-[40vh] bg-zinc-800 rounded-full mix-blend-screen filter blur-[100px] opacity-[0.1] animate-blob animation-delay-2000"></div>
+        {/* Blob Inferior (Depth) */}
+        <div className="absolute bottom-[-10%] left-[20%] w-[60vh] h-[60vh] bg-neutral-900 rounded-full mix-blend-screen filter blur-[120px] opacity-[0.2] animate-blob animation-delay-4000"></div>
+      </div>
+
       {/* DISCLAIMER BANNER (SPANISH) */}
-      <div className="w-full bg-yellow-600/10 border-b border-yellow-600/20 py-2 px-2 md:px-4 text-center backdrop-blur-sm z-50">
+      <div className="w-full bg-yellow-600/10 border-b border-yellow-600/20 py-1.5 px-2 md:px-4 text-center backdrop-blur-sm z-40 relative">
         <p className="text-[9px] md:text-xs mono text-yellow-500/80 leading-tight">
           <span className="font-bold">⚠️ APP NO OFICIAL: </span>
           <a 
@@ -164,20 +181,20 @@ const App: React.FC = () => {
         </p>
       </div>
 
-      <div className="w-full max-w-5xl mx-auto p-3 md:p-8 flex flex-col items-center flex-grow">
-        <header className="w-full flex justify-between items-center mb-4 md:mb-8 pb-3 md:pb-4 border-b border-red-900/30">
+      <div className="w-full max-w-5xl mx-auto p-2 md:p-8 flex flex-col items-center flex-grow z-10 relative">
+        <header className="w-full flex justify-between items-center mb-2 md:mb-8 pb-2 md:pb-4 border-b border-red-900/30">
           <div className="flex flex-col">
-            <h1 className="text-xl md:text-3xl font-black uppercase tracking-tighter text-red-600 flex items-center gap-2">
-              <span className="w-2 h-6 md:w-3 md:h-8 bg-red-600 inline-block"></span>
+            <h1 className="text-lg md:text-3xl font-black uppercase tracking-tighter text-red-600 flex items-center gap-2">
+              <span className="w-1.5 h-5 md:w-3 md:h-8 bg-red-600 inline-block"></span>
               Buckshot Tracker
             </h1>
-            <p className="text-[10px] md:text-xs mono text-zinc-500 uppercase">Dealer Status: Operational</p>
+            <p className="text-[9px] md:text-xs mono text-zinc-500 uppercase">Dealer Status: Operational</p>
           </div>
           
           {state.isStarted && (
             <button 
               onClick={handleReset}
-              className="px-3 py-1.5 md:px-4 md:py-2 border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 text-[10px] md:text-xs mono uppercase transition-colors"
+              className="px-2 py-1 md:px-4 md:py-2 border border-zinc-700 bg-zinc-900 hover:bg-zinc-800 text-zinc-400 text-[9px] md:text-xs mono uppercase transition-colors"
             >
               Reset
             </button>
@@ -193,7 +210,7 @@ const App: React.FC = () => {
             <HistoryLog entries={history} />
           </div>
         ) : (
-          <div className="w-full flex flex-col gap-4 md:gap-8">
+          <div className="w-full flex flex-col gap-2 md:gap-8">
             <StatusBoard 
               initialLive={state.initialLive}
               initialBlank={state.initialBlank}
@@ -206,7 +223,8 @@ const App: React.FC = () => {
               status={counters.status}
             />
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-2 md:gap-4">
+            {/* GRID MODIFICADO: grid-cols-4 en móvil para ser más compacto */}
+            <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4">
               {state.slots.map((slot, index) => (
                 <SlotCard 
                   key={slot.id}
@@ -217,9 +235,9 @@ const App: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-4 md:mt-8 p-4 md:p-6 glass border-red-900/20 rounded-lg">
-              <h3 className="text-xs mono uppercase text-zinc-500 mb-2 md:mb-4 tracking-widest">Protocol Instructions</h3>
-              <ul className="text-xs md:text-sm text-zinc-400 space-y-1 md:space-y-2 list-disc list-inside">
+            <div className="mt-2 md:mt-8 p-3 md:p-6 glass border-red-900/20 rounded-lg">
+              <h3 className="text-xs mono uppercase text-zinc-500 mb-1 md:mb-4 tracking-widest">Protocol Instructions</h3>
+              <ul className="text-[10px] md:text-sm text-zinc-400 space-y-1 md:space-y-2 list-disc list-inside">
                 <li>Input total <span className="text-red-500 font-bold">LIVE</span> and <span className="text-blue-500 font-bold">BLANK</span> rounds.</li>
                 <li>Mark slot as <span className="text-red-500 underline">LIVE</span> (L) or <span className="text-blue-500 underline">BLANK</span> (B) when identified.</li>
                 <li>Toggle the <span className="text-yellow-500 font-bold">FLAG</span> icon when a round is fired.</li>
@@ -229,8 +247,8 @@ const App: React.FC = () => {
           </div>
         )}
 
-        <footer className="mt-auto pt-8 md:pt-12 text-center text-[9px] md:text-[10px] mono uppercase text-zinc-700 tracking-[0.2em]">
-          SYSTEM v4.3.3 // LOGIC KERNEL ONLINE
+        <footer className="mt-auto pt-4 md:pt-12 text-center text-[9px] md:text-[10px] mono uppercase text-zinc-700 tracking-[0.2em]">
+          SYSTEM v4.3.4 // LOGIC KERNEL ONLINE
         </footer>
       </div>
     </div>

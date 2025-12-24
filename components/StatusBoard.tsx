@@ -62,61 +62,61 @@ const StatusBoard: React.FC<StatusBoardProps> = ({
   const styles = getProbStyles();
 
   return (
-    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+    <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6">
       {/* Live Tracker - Columna 1 en móvil */}
-      <div className="glass p-3 md:p-4 rounded-lg border-l-4 border-red-600 col-span-1">
-        <div className="flex justify-between items-start mb-1 md:mb-2">
-          <span className="text-[10px] md:text-xs mono text-zinc-500 uppercase">Live</span>
-          <span className="text-xl md:text-2xl font-black text-red-500">{initialLive}</span>
+      <div className="glass p-2 md:p-4 rounded-lg border-l-2 md:border-l-4 border-red-600 col-span-1">
+        <div className="flex justify-between items-start mb-0.5 md:mb-2">
+          <span className="text-[9px] md:text-xs mono text-zinc-500 uppercase">Live</span>
+          <span className="text-lg md:text-2xl font-black text-red-500 leading-none">{initialLive}</span>
         </div>
         <div className="flex flex-col gap-0.5 md:gap-0">
           <div className="flex justify-between items-center text-xs md:text-sm">
-            <span className="text-zinc-400 mono text-[10px] md:text-sm">To ID:</span>
+            <span className="text-zinc-400 mono text-[9px] md:text-sm">To ID:</span>
             <span className={`font-bold transition-all duration-300 ${remainingToIdentifyLive > 0 ? 'text-red-400 animate-pulse-red' : 'text-zinc-600'}`}>
               {remainingToIdentifyLive}
             </span>
           </div>
           <div className="flex justify-between items-center text-xs md:text-sm mt-0.5">
-            <span className="text-zinc-400 mono text-[10px] md:text-sm">In Gun:</span>
+            <span className="text-zinc-400 mono text-[9px] md:text-sm">In Gun:</span>
             <span className="font-bold text-red-600">{activeLive}</span>
           </div>
         </div>
       </div>
 
       {/* Blank Tracker - Columna 2 en móvil */}
-      <div className="glass p-3 md:p-4 rounded-lg border-l-4 border-zinc-400 col-span-1">
-        <div className="flex justify-between items-start mb-1 md:mb-2">
-          <span className="text-[10px] md:text-xs mono text-zinc-500 uppercase">Blank</span>
-          <span className="text-xl md:text-2xl font-black text-zinc-100">{initialBlank}</span>
+      <div className="glass p-2 md:p-4 rounded-lg border-l-2 md:border-l-4 border-zinc-400 col-span-1">
+        <div className="flex justify-between items-start mb-0.5 md:mb-2">
+          <span className="text-[9px] md:text-xs mono text-zinc-500 uppercase">Blank</span>
+          <span className="text-lg md:text-2xl font-black text-zinc-100 leading-none">{initialBlank}</span>
         </div>
         <div className="flex flex-col gap-0.5 md:gap-0">
           <div className="flex justify-between items-center text-xs md:text-sm">
-            <span className="text-zinc-400 mono text-[10px] md:text-sm">To ID:</span>
+            <span className="text-zinc-400 mono text-[9px] md:text-sm">To ID:</span>
             <span className={`font-bold transition-all duration-300 ${remainingToIdentifyBlank > 0 ? 'text-zinc-300' : 'text-zinc-600'}`}>
               {remainingToIdentifyBlank}
             </span>
           </div>
           <div className="flex justify-between items-center text-xs md:text-sm mt-0.5">
-            <span className="text-zinc-400 mono text-[10px] md:text-sm">In Gun:</span>
+            <span className="text-zinc-400 mono text-[9px] md:text-sm">In Gun:</span>
             <span className="font-bold text-zinc-100">{activeBlank}</span>
           </div>
         </div>
       </div>
 
       {/* Probability Display - Ancho completo abajo en móvil, columna 3 en desktop */}
-      <div className={`glass p-3 md:p-4 rounded-lg border-l-4 transition-all duration-500 flex flex-col justify-center col-span-2 md:col-span-1 ${styles.borderColor} ${styles.shadow}`}>
+      <div className={`glass p-2 md:p-4 rounded-lg border-l-2 md:border-l-4 transition-all duration-500 flex flex-col justify-center col-span-2 md:col-span-1 ${styles.borderColor} ${styles.shadow}`}>
         <div className="flex justify-between items-end">
           <div className="flex flex-col">
-            <span className="text-[10px] md:text-xs mono text-zinc-500 uppercase mb-0.5 md:mb-1">
+            <span className="text-[9px] md:text-xs mono text-zinc-500 uppercase mb-0.5 md:mb-1">
               Next Shot {styles.label}
             </span>
-            <span className={`text-2xl md:text-3xl font-black transition-colors ${styles.textColor}`}>
+            <span className={`text-xl md:text-3xl font-black transition-colors leading-none ${styles.textColor}`}>
               {liveProb.toFixed(1)}%
             </span>
           </div>
           <div className="text-right">
-             <span className="text-[10px] md:text-xs mono text-zinc-500 uppercase block">Remaining</span>
-             <span className="text-lg md:text-xl font-bold text-zinc-400">{totalRemainingInChamber}</span>
+             <span className="text-[9px] md:text-xs mono text-zinc-500 uppercase block">Remaining</span>
+             <span className="text-base md:text-xl font-bold text-zinc-400 leading-none">{totalRemainingInChamber}</span>
           </div>
         </div>
       </div>

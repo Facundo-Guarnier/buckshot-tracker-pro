@@ -1,3 +1,4 @@
+
 /* Eliminamos @tailwind directives para que funcione sin build step */
 
 body {
@@ -44,4 +45,62 @@ body {
   mask-size: cover;
   -webkit-mask-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
   -webkit-mask-size: cover;
+}
+
+/* Animación de fondo suave (Efecto Lámpara de Lava Industrial) */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 15s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* --- NUEVAS ANIMACIONES DE FONDO --- */
+
+/* Rejilla en movimiento */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@keyframes grid-pan {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 40px 40px; }
+}
+
+.animate-grid-pan {
+  animation: grid-pan 8s linear infinite;
+}
+
+/* Línea de escaneo descendente */
+@keyframes scanline-drop {
+  0% { top: -10%; opacity: 0; }
+  10% { opacity: 0.5; }
+  90% { opacity: 0.5; }
+  100% { top: 110%; opacity: 0; }
+}
+
+.scanline-bar {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to bottom, transparent, rgba(220, 38, 38, 0.1), transparent);
+  animation: scanline-drop 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
 }
