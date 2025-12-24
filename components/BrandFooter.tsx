@@ -88,14 +88,14 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
               target="_blank" 
               rel="noopener noreferrer"
               className="
-                flex items-center gap-1.5 md:gap-2 px-2 md:px-3 py-1 md:py-1.5 rounded-lg transition-all font-medium text-xs md:text-sm
+                flex items-center gap-1 sm:gap-1.5 md:gap-2 px-1.5 sm:px-2 md:px-3 py-0.5 sm:py-1 md:py-1.5 rounded-lg transition-all font-medium text-[10px] sm:text-xs md:text-sm
                 bg-white text-zinc-700 border border-zinc-200 
                 hover:bg-zinc-200 hover:text-zinc-900
                 dark:bg-zinc-900/50 dark:text-zinc-400 dark:border-zinc-800
                 dark:hover:bg-red-950/30 dark:hover:text-red-400 dark:hover:border-red-900/40
               "
             >
-              <Globe className="w-3.5 h-3.5 md:w-4 md:h-4" />
+              <Globe className="w-3 h-3 sm:w-3.5 sm:h-3.5 md:w-4 md:h-4" />
               <span className="hidden lg:inline">Más proyectos en</span>
               <span className="lg:hidden">By</span>
               <strong className="tracking-wide">{brandName}</strong>
