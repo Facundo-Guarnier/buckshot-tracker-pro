@@ -50,7 +50,7 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
 
   // Base wrapper for forced dark mode
   const Wrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => 
-    forceDark ? <div className="dark">{children}</div> : <>{children}</>;
+    forceDark ? <div className="dark w-full">{children}</div> : <>{children}</>;
 
   // Signature component - subtle and elegant
   const Signature = () => brandSignature ? (
