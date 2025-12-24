@@ -247,9 +247,10 @@ const App: React.FC = () => {
             </div>
           </div>
         )}
-
-        <BrandFooter compact forceDark />
       </div>
+
+      {/* Footer siempre al fondo */}
+      <BrandFooter compact forceDark className="w-full mt-auto z-10 relative" />
     </div>
   );
 };

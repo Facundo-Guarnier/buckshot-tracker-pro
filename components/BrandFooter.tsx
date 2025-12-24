@@ -65,9 +65,8 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
     return (
       <Wrapper>
         <footer className={`
-          py-4 px-6 border-t print:hidden transition-colors backdrop-blur-md
-          bg-zinc-100/80 border-zinc-200
-          dark:bg-black/40 dark:border-red-900/20
+          py-3 px-4 border-t print:hidden transition-colors backdrop-blur-sm
+          bg-neutral-950/80 border-zinc-800/50
           ${className}
         `}>
           <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-sm">
