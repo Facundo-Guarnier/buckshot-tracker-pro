@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Slot, RoundType } from '../types';
+import { Slot } from '../types';
 
 interface SlotCardProps {
   slot: Slot;
@@ -16,7 +16,6 @@ const SlotCard: React.FC<SlotCardProps> = ({ slot, index, onUpdate }) => {
 
   // Determinar estilos base según estado
   let cardStyles = "glass border-zinc-800"; // Default unknown
-  let indicatorColor = "text-zinc-700";
 
   if (isFired) {
     // Estilos para estado DISPARADO (Oscuro, "Quemado")
