@@ -91,5 +91,4 @@ Este proyecto está bajo la licencia **MIT**. Ver el archivo [LICENSE](./LICENSE
 ### Agradecimientos
 
 - [Google AI Studio](https://aistudio.google.com/) - Por las herramientas de IA que facilitaron el desarrollo inicial
-- [Shadcn/ui](https://ui.shadcn.com/) - Inspiración para componentes UI
 - [Buckshot Roulette](https://store.steampowered.com/app/2835570/Buckshot_Roulette/) - El juego original
