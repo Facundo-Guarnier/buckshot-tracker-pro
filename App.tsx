@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo, useCallback } from 'react';
-import { GameState, Slot, RoundType, HistoryEntry } from './types';
+import { GameState, Slot, HistoryEntry } from './types';
 import SlotCard from './components/SlotCard';
 import StatusBoard from './components/StatusBoard';
 import SetupForm from './components/SetupForm';
