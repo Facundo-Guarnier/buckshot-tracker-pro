@@ -45,7 +45,7 @@ export const BrandFooter: React.FC<BrandFooterProps> = ({
   const appVersion = import.meta.env.VITE_APP_VERSION || '4.3.0';
   const brandName = import.meta.env.VITE_BRAND_NAME || 'Guarnold';
   const brandUrl = import.meta.env.VITE_BRAND_URL || 'https://guarnold.com.ar';
-  const brandSignature = import.meta.env.VITE_BRAND_SIGNATURE || '';
+  const brandSignature = import.meta.env.VITE_BRAND_SIGNATURE || '/assets/guarnold_firma.png';
   const repoUrl = import.meta.env.VITE_REPO_URL || 'https://github.com/Facundo-Guarnier/buckshot-tracker-pro';
 
   // Base wrapper for forced dark mode
