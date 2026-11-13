@@ -10,16 +10,18 @@ Probability calculator for Buckshot Roulette.
 
 ## Hard rules (non-negotiable)
 
-- **🚫 ⊥ `git push`. EVER.** Agent commits; the user pushes.
+- **⊥ `git push` to `main`.** To `dev` only if the owner asks. The owner pushes on their own: ⊥ remind them; `git fetch` before claiming ahead/behind.
+- dev→main PR is opened only when the owner asks for the merge; that authorization covers that PR only.
 - Branches: `main` = stable/prod · `dev` = daily work (default). ⊥ commit straight to `main`.
 - **Done = all 3, actually run (⊥ assumed):** build clean · lint clean (where configured) · tests green (where they exist).
   Fails → report the real output. ⊥ `--no-verify` to dodge a hook.
 - Non-trivial change → plan first. Touches DB, permissions, several files, or changes behavior → always.
-- Verification agents (gap/contradiction hunting) are token-expensive → **ASK THE USER FIRST**.
+- Verification agents (gap/contradiction hunting) are token-expensive → normal review: just run it. **Ask the owner only before a big or costly sweep** (many agents, Ultracode, a large workflow).
+- Autonomy: finish until it's right; ⊥ "shall I continue?", ⊥ asking permission for the basics; ask only real decisions.
 
 ## Context
 
-- Lives in `D:/Repositorios_GitHub/personal/buckshot-tracker-pro` — a container of 22 independent repos.
+- Lives in `D:/Repositorios_GitHub/personal/buckshot-tracker-pro` — a container of independent repos.
   The `AGENTS.md` at that root explains the whole setup.
 - Owner's generic rules: `D:/Repositorios_GitHub/guarnold-hub/.claude/memory/` → start at `MEMORY.md`.
   Path ⊥ exists (other machine / external dev) → skip it, this file stands alone.
